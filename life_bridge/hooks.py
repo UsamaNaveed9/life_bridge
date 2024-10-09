@@ -213,3 +213,10 @@ app_license = "MIT"
 # auth_hooks = [
 # 	"life_bridge.auth.validate"
 # ]
+
+fixtures = [
+    {
+        "dt": "Client Script",
+        "filters": [["module","=","Life Bridge"]]
+    }
+]

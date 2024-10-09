@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2024-10-09 10:57:02.773531",
+  "module": "Life Bridge",
+  "name": "Link Prev Doc",
+  "script": "frappe.ui.form.on('Sales Invoice', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})\n\nfrappe.ui.form.on('Sales Invoice Item', {\n\titem_code(frm,cdt,cdn) {\n\t    let row = locals[cdt][cdn]\n\t\tvar prev_route = frappe.get_prev_route();\n\t\tif (prev_route[1] === 'Therapy Plan') {\n\t\t\trow.reference_dt = 'Therapy Plan';\n\t\t\trow.reference_dn = prev_route[2];\n\t\t}\n\t}\n})",
+  "view": "Form"
+ }
+]
